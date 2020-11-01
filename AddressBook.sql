@@ -64,4 +64,10 @@ alter table addressBook add contacts_id INT NOT NULL after id;
 alter table addressBook add foreign key (contacts_id) references contact_table(contact_id);
 
 #UC10
- select type,count(contact_id) from addressBook group by type;
+ select type,count(contacts_id) from addressBook group by type;
+
+ #UC11
+insert into addressBook (contacts_id, addName, type) values (1,'AddressBook1','family');
+insert into addressBook (contacts_id, addName, type) values (2,'AddressBook2','friend');
+insert into addressBook (contacts_id, addName, type) values (3,'AddressBook3','profession');
+insert into addressBook (contacts_id, addName, type) values (1,'AddressBook2','friend');
