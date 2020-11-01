@@ -48,3 +48,17 @@ select city, state, count(*) from addressBookTable group by city, state;
 
 #UC8
 select * from addressBookTable where city = 'ichalkaranji' order by firstname,lastname;
+
+#UC9
+alter table addressBookTable add id INT AUTO_INCREMENT NOT NULL primary key  first;
+alter table addressBookTable change id contact_id INT;
+alter table addressBookTable rename contact_table;
+create table addressBook
+    -> (
+    -> id       INT NOT NULL AUTO_INCREMENT,
+    -> addName  VARCHAR(150) NOT NULL,
+    -> type     VARCHAR(150),
+    -> primary key (id)
+    -> );
+alter table addressBook add contacts_id INT NOT NULL after id;
+alter table addressBook add foreign key (contacts_id) references contact_table(contact_id);
