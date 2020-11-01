@@ -37,8 +37,11 @@ select * from addressBookTable;
 
 #UC6:
 update addressBookTable set city = 'Mumbai',zip = '400019' where firstname = 'Mukesh' AND lastname = 'Ambani';
-update addressBookTable set city = 'Banglore',zip = '401019' where firstname = 'Ratan' AND lastname = 'Tata';
+update addressBookTable set city = 'Banglore',zip = '400115' where firstname = 'Ratan' AND lastname = 'Tata';
 insert into addressBookTable values('Jeff','Bezos','ichalkaranji','kolhapur','Maharashtra',416115,9874521036,'jeff@gmail.com');
 select * from addressBookTable where city = 'ichalkaranji';
 select * from addressBookTable where city = 'Pune';
 select * from addressBookTable where state = 'Maharashtra';
+
+#UC7
+select city, state, count(*) from addressBookTable group by city, state;
