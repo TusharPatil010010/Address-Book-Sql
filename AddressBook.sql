@@ -45,3 +45,6 @@ select * from addressBookTable where state = 'Maharashtra';
 
 #UC7
 select city, state, count(*) from addressBookTable group by city, state;
+
+#UC8
+select * from addressBookTable where city = 'ichalkaranji' order by firstname,lastname;
