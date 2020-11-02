@@ -71,3 +71,8 @@ insert into addressBook (contacts_id, addName, type) values (1,'AddressBook1','f
 insert into addressBook (contacts_id, addName, type) values (2,'AddressBook2','friend');
 insert into addressBook (contacts_id, addName, type) values (3,'AddressBook3','profession');
 insert into addressBook (contacts_id, addName, type) values (1,'AddressBook2','friend');
+
+#UC13
+select contact_table.contact_id, contact_table.firstname,contact_table.lastname,contact_table.address, contact_table.city, contact_table.state, 
+       contact_table.zip, contact_table.phone, contact_table.email, addressBook.addName, addressBook.type
+from contact_table inner join addressBook on contact_table.contact_id = addressBook.contacts_id;
